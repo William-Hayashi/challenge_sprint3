@@ -18,9 +18,13 @@ public class CadastroController {
 
     @GetMapping("/") // Rota inicial
     public String viewHomePage(Model model) { // Nome corrigido do método
-
-        model.addAttribute("listCadastro", cadastroService.getallCadastro());
         return "index";
+    }
+
+    @GetMapping("/IndexCadastro") // Rota inicial Cadastro
+    public String indexCadastro(Model model) {
+        model.addAttribute("listCadastro", cadastroService.getallCadastro());
+        return "cadastrar";
     }
 
     @GetMapping("/showCadastroForm")
@@ -33,7 +37,7 @@ public class CadastroController {
     @PostMapping("/saveCadastro")
     public String saveCadastro(@ModelAttribute("cadastro") Cadastro cadastro) {
         cadastroService.saveCadastro(cadastro);
-        return "redirect:/";
+        return "redirect:/IndexCadastro";
     }
 
     @GetMapping("/MostrarFormUpdate/{id}")
@@ -46,6 +50,6 @@ public class CadastroController {
     @GetMapping("/DeletarCadastro/{id}")
     public String DeletarCadastro(@PathVariable(value = "id") Long id){
         this.cadastroService.DeletarCadastroporId(id);
-        return "redirect:/";
+        return "redirect:/IndexCadastro";
     }
 }

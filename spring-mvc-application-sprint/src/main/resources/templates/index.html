@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Gerenciamento de Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha de Função</title>
 
+  <!-- Bootstrap -->
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
+  <style>
+    body {
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .btn-custom {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+      border: none;
+    }
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container my-2">
-  <h1> Lista de Cadastro </h1>
-  <a th:href="@{/showCadastroForm}" class="btn btn-primary btn-sm-mb-3">Cadastrar</a>
+<div class="container">
+  <h1>Escolha uma opção</h1>
 
-    <table border="1" class="table table-striped table-responsive-md">
-      <thead>
-        <tr>
-          <th>Primeiro Nome do Cadastrado</th>
-          <th>Sobrenome do Cadastrado</th>
-          <th>Email do Cadastrado</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="cadastro : ${listCadastro}">
-          <td th:text="${cadastro.nome}"></td>
-          <td th:text="${cadastro.sobrenome}"></td>
-          <td th:text="${cadastro.email}"></td>
-          <td> <a th:href="@{/MostrarFormUpdate/{id}(id=${cadastro.id})}" class="btn btn-primary">Atualizar</a>
-            <a th:href="@{/DeletarCadastro/{id}(id=${cadastro.id})}" class="btn btn-danger">Deletar</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <a th:href="@{/IndexCadastro}" class="btn btn-primary btn-custom">Cadastro Cliente</a>
+  <button class="btn btn-secondary btn-custom">Cadastro Ponto de Energia</button>
 </div>
+
+
+
 </body>
 </html>
