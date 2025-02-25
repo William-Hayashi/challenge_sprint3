@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spring-mvc-application-sprint.iml" filepath="$PROJECT_DIR$/.idea/spring-mvc-application-sprint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/challenge_sprint3.iml" filepath="$PROJECT_DIR$/.idea/challenge_sprint3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc-application-sprint/spring-mvc-application-sprint.iml" filepath="$PROJECT_DIR$/spring-mvc-application-sprint/spring-mvc-application-sprint.iml" />
     </modules>
   </component>
 </project>
