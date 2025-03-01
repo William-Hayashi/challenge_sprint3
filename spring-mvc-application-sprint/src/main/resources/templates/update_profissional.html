@@ -12,10 +12,13 @@
 <div class="container">
     <h1>Gerenciamento de Profissional</h1>
     <hr>
-    <h2>Salvar Cadastro do Profissional</h2>
+    <h2>Atualizar Cadastro do Profissional</h2>
 
     <form action="#" th:action="@{/saveProfissional}" th:object="${profissional}"
           method="POST">
+
+        <input type="hidden" th:field="*{id}"/>
+
         <input type="text" th:field="*{cfo}"
                placeholder="CFO" class="form-control mb-4 col-4">
 
@@ -31,7 +34,7 @@
         <input type="text" th:field="*{senha}"
                placeholder="Senha do Profissional" class="form-control mb-4 col-4">
 
-        <button type="submit" class="btn btn-info col-2"> Salvar Cadastro</button>
+        <button type="submit" class="btn btn-info col-2"> Atualizar Cadastro</button>
     </form>
 
     <hr>

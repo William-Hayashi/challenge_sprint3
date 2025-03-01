@@ -1,11 +1,8 @@
 package com.springSprint.spring_mvc_application_sprint.Service;
 
-import com.springSprint.spring_mvc_application_sprint.Model.Cadastro;
 import com.springSprint.spring_mvc_application_sprint.Model.Profissional;
-import com.springSprint.spring_mvc_application_sprint.Repository.CadastroRepository;
 import com.springSprint.spring_mvc_application_sprint.Repository.ProfissionalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +14,8 @@ public class ProfissionalImplent implements ProfissionalService {
     private ProfissionalRepository profissionalRepository;
 
     @Override
-    public List<Profissional> getallProfissional() { return profissionalRepository.findAll();
+    public List<Profissional> getallProfissional() {
+        return profissionalRepository.findAll();
     }
 
     @Override
